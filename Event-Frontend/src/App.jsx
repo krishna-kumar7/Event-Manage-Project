@@ -1,25 +1,12 @@
-import { BrowserRouter, Routes } from "react-router-dom"
-import { Link } from "react-router-dom"
-import Home from "./Components/Home"
+import React from "react";
+import EventSection from "./components/EventSection";
 
-
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-      
-      <Home/>
-      {/* <BrowserRouter>
-       <Routes>
-        <Route>
-          <Route/>
-         
-        </Route>
-       </Routes>
-      </BrowserRouter> */}
-    </>
-  )
-}
+    <div>
+      <EventSection />
+    </div>
+  );
+};
 
-export default App
+export default App;
