@@ -1,10 +1,13 @@
 import React from "react";
 import EventSection from "./components/EventSection";
+import WeddingSec from "./components/WeddingSec";
+
 
 const App = () => {
   return (
     <div>
-      <EventSection />
+     
+     <WeddingSec />
     </div>
   );
 };
