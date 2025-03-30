@@ -1,25 +1,17 @@
-import { BrowserRouter, Routes } from "react-router-dom"
-import { Link } from "react-router-dom"
-import Home from "./Components/Home"
+import React from "react";
+import EventSection from "./components/EventSection";
+import WeddingSec from "./components/WeddingSec";
+import PartiesSec from "./components/PartiesSec";
+import MeetupSec from "./components/MeetupSec"
+import SeminarSec from "./components/SeminarSec"
 
-
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-      
-      <Home/>
-      {/* <BrowserRouter>
-       <Routes>
-        <Route>
-          <Route/>
-         
-        </Route>
-       </Routes>
-      </BrowserRouter> */}
-    </>
-  )
-}
+    <div>
+     
+     <SeminarSec />
+    </div>
+  );
+};
 
-export default App
+export default App;

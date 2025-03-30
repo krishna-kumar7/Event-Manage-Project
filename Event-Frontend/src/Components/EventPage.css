@@ -1,0 +1,126 @@
+/* EventPage.css */
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+  }
+  
+  /* Header */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff5a5f;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    cursor: pointer;
+  }
+  
+  .active {
+    color: #ff5a5f;
+    font-weight: bold;
+  }
+  
+  .plan-btn {
+    padding: 0.5rem 1rem;
+    background: #ff5a5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  /* Venue Cards */
+  .venues {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .venue-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .venue-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: white;
+  }
+  
+  .venue-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .checkin-btn {
+    background: #ff5a5f;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    background: #f8f8f8;
+    padding: 2rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .categories ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, textarea {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+  
+  button {
+    background: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
