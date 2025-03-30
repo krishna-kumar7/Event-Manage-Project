@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ee8181;
+    padding: 10px 30px;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff5252;
+    font-family: cursive;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .nav-links a.active {
+    /* color: #ff5252; */
+    font-weight: bold;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .plan-event-btn {
+    background-color: #ff1e1e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
