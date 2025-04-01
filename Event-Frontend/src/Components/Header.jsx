@@ -18,10 +18,9 @@ const Header = () => {
       </nav>
       <div className="header-actions">
         <button className="plan-event-btn">Plan Your Event</button>
-        <div className="profile">
+        <Link to="/login" className="profile">
           <span className="icon">👤</span>
-          <span className="dropdown-arrow">▼</span>
-        </div>
+        </Link>
       </div>
     </header>
   );

@@ -11,6 +11,7 @@ import MeetupSec from "./Components/MeetupSec";
 import SeminarSec from "./Components/SeminarSec";
 import About from "./Components/About";
 import Contact from "./Components/Contect";
+import Login from "./Components/Login";
 
 // Layout wrapper to include Header & Footer
 const Layout = ({ children }) => (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/seminars" element={<Layout><SeminarSec /></Layout>} />
         <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/login" element={<Layout><Login /></Layout>} />
       </Routes>
     </Router>
   );
