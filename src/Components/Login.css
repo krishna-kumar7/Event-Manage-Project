@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5b5b;
+  }
+  
+  .navigation a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .navigation a:hover {
+    color: #ff5b5b;
+  }
+  
+  .plan-event-button {
+    background-color: #ff5b5b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .plan-event-button:hover {
+    background-color: #e04c4c;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .login-main {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .login-box h1 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-form input:focus {
+    border-color: #ff5b5b;
+    outline: none;
+    box-shadow: 0 0 4px rgba(255, 91, 91, 0.4);
+  }
+  
+  .login-button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff5b5b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #e04c4c;
+  }
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .separator hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+  }
+  
+  .separator span {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-login button {
+    width: 50px;
+    height: 40px;
+    border: 2px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  
+  .google{
+    width: 30px;
+    height: 30px;
+    margin-left: -1px;
+    margin-top: 4.5px;
+  }
+  
+  
+  .facebook{
+    width: 30px;
+    height: 30px;
+    margin-top: 4px;
+    margin-left: -1px;
+  }
+  
+  .signup-text {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .signup-text a {
+    color: #ff5b5b;
+    text-decoration: none;
+  }
+  
+  .signup-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    margin-top: 3rem;
+    background-color: #ffffff;
+    border-top: 1px solid #ccc;
+  }
+  
+  .categories,
+  .address,
+  .get-in-touch {
+    flex: 1;
+  }
+  
+  .categories ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    margin: 0.5rem 0;
+  }
+  
+  .get-in-touch form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .get-in-touch form input,
+  .get-in-touch form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .get-in-touch form button {
+    background-color: #ff5b5b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .get-in-touch form button:hover {
+    background-color: #e04c4c;
+  }
+  

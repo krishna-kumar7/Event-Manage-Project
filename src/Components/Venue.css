@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  /* Venue Description */
+  .venue-description {
+    flex: 2;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .venue-description h1 {
+    color: #ff6f61;
+    margin-bottom: 1rem;
+  }
+  
+  .venue-description h2 {
+    margin-top: 2rem;
+    color: #555;
+  }
+  
+  .venue-description ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .venue-description li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Booking Card */
+  .booking-card {
+    flex: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .booking-card .card-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .booking-card h3 {
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  .booking-card .guest-details,
+  .booking-card .date-picker {
+    margin: 1rem 0;
+  }
+  
+  .booking-card label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .booking-card input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .booking-card .price h4 {
+    margin: 1rem 0;
+    color: #ff6f61;
+  }
+  
+  .book-now-button {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .book-now-button:hover {
+    background-color: #e65a4e;
+  }
+  
+  
