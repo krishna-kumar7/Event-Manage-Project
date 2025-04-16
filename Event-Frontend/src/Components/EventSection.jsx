@@ -1,57 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./EventSection.css";
+import { useNavigate } from "react-router-dom";
 
-const PartiesSec = () => {
-  // Banner images
+const EventSection = () => {
+  const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
   const banners = [
     "/src/images/wedding03.jpg",
     "/src/images/wedding002.png",
     "/src/images/wedding01.jpg",
   ];
 
-  // Venue data
-  const venues = [
-    {
-      name: "Hotel Saket",
-      rating: 4.7,
-      reviews: 545,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Sangam Castle",
-      rating: 4.6,
-      reviews: 387,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Divine Vatika",
-      rating: 4.6,
-      reviews: 374,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Palms Resort",
-      rating: 4.5,
-      reviews: 347,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Om Sai Resort",
-      rating: 4.4,
-      reviews: 345,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-  ];
+  useEffect(() => {
+    fetch("http://localhost:5000/api/events")
+      .then((res) => res.json())
+      .then(setEvents)
+      .catch((err) => console.error("Failed to load events", err));
+  }, []);
 
-  // Slider settings for banner
   const bannerSettings = {
     dots: true,
     infinite: true,
@@ -62,9 +33,12 @@ const PartiesSec = () => {
     autoplaySpeed: 1500,
   };
 
+  const handleCheckIn = () => {
+    navigate(isLoggedIn ? "/event-detail" : "/login");
+  };
+
   return (
     <div className="event-section">
-      {/* Auto-Sliding Banner */}
       <div className="banner-slider">
         <Slider {...bannerSettings}>
           {banners.map((img, index) => (
@@ -75,41 +49,26 @@ const PartiesSec = () => {
         </Slider>
       </div>
 
-      {/* Scrollable Venue Cards */}
-      <h2 className="venue-title">Wedding Venues</h2>
+      <h2 className="venue-title">All Events</h2>
       <div className="venue-scroll">
-        {venues.map((venue, index) => (
+        {events.map((event, index) => (
           <div key={index} className="venue-card">
-            <img src={venue.image} alt={venue.name} />
-            <h3>{venue.name}</h3>
-            <p>⭐ {venue.rating} ({venue.reviews}) - {venue.location}</p>
-            <button className="checkin-btn">CHECK IN</button>
+            <img
+              src={`http://localhost:5000${event.image_url}`}
+              alt={event.name}
+              className="venue-img"
+            />
+            <h3>{event.name}</h3>
+            <p>{event.description}</p>
+            <p>📍 {event.location} | ₹{event.price}</p>
+            <button className="checkin-btn" onClick={handleCheckIn}>
+              CHECK IN
+            </button>
           </div>
         ))}
       </div>
-      <div className="venue-scroll">
-        {venues.map((venue, index) => (
-          <div key={index} className="venue-card">
-            <img src={venue.image} alt={venue.name} />
-            <h3>{venue.name}</h3>
-            <p>⭐ {venue.rating} ({venue.reviews}) - {venue.location}</p>
-            <button className="checkin-btn">CHECK IN</button>
-          </div>
-        ))}
-      </div>
-      <div className="venue-scroll">
-        {venues.map((venue, index) => (
-          <div key={index} className="venue-card">
-            <img src={venue.image} alt={venue.name} />
-            <h3>{venue.name}</h3>
-            <p>⭐ {venue.rating} ({venue.reviews}) - {venue.location}</p>
-            <button className="checkin-btn">CHECK IN</button>
-          </div>
-        ))}
-      </div>
-      
     </div>
   );
 };
 
-export default PartiesSec;
+export default EventSection;

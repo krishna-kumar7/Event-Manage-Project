@@ -1,0 +1,82 @@
+/* Center the card */
+.booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* Invoice Card */
+.booking-card {
+  position: relative;
+  width: 450px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #ff6666;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ff6666;
+}
+
+/* Title */
+.invoice-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6666;
+  text-transform: uppercase;
+}
+
+/* Invoice Details */
+.invoice-details {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.invoice-details p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+hr {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+/* Total */
+.invoice-details p strong {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Book Now Button */
+.book-now {
+  background-color: #ff6666;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.book-now:hover {
+  background-color: #ff4d4d;
+}

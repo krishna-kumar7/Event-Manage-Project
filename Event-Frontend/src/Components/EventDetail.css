@@ -1,0 +1,100 @@
+/* EventDetail.css */
+.event-detail-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .event-info {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-info h1 {
+    color: #d9534f;
+  }
+  
+  .event-info h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .event-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .event-info ul li {
+    padding: 5px 0;
+  }
+  
+  .event-booking {
+    width: 35%;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-gallery {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .gallery-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-img:hover {
+    transform: scale(1.1);
+  }
+  
+  .booking-info {
+    margin-top: 10px;
+  }
+  
+  .book-now {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .book-now:hover {
+    background: #c9302c;
+  }
+  
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+  }

@@ -1,57 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./EventSection.css";
+import { useNavigate } from "react-router-dom";
 
 const SeminarSec = () => {
-  // Banner images
+  const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
   const banners = [
-    "/src/images/banner_2.jpg",
-    "/src/images/banner_3.png",
-    "/src/images/banner_5.jpg",
+    "/src/images/s1.jpg",
+    "/src/images/s4.webp",
+    "/src/images/s5.jpeg",
   ];
 
-  // Venue data
-  const venues = [
-    {
-      name: "Hotel Saket",
-      rating: 4.7,
-      reviews: 545,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Sangam Castle",
-      rating: 4.6,
-      reviews: 387,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Divine Vatika",
-      rating: 4.6,
-      reviews: 374,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Palms Resort",
-      rating: 4.5,
-      reviews: 347,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-    {
-      name: "Om Sai Resort",
-      rating: 4.4,
-      reviews: 345,
-      location: "Civil Lines",
-      image: "/src/images/banner2.jpg",
-    },
-  ];
+  useEffect(() => {
+    fetch("http://localhost:5000/api/events")
+      .then((res) => res.json())
+      .then((data) => {
+        const filtered = data.filter((event) => event.category === "seminar");
+        setEvents(filtered);
+      })
+      .catch((err) => console.error("Failed to load seminar events", err));
+  }, []);
 
-  // Slider settings for banner
+  const handleCheckIn = () => {
+    navigate(isLoggedIn ? "/event-detail" : "/login");
+  };
+
   const bannerSettings = {
     dots: true,
     infinite: true,
@@ -64,7 +42,7 @@ const SeminarSec = () => {
 
   return (
     <div className="event-section">
-      {/* Auto-Sliding Banner */}
+      {/* Banner slider */}
       <div className="banner-slider">
         <Slider {...bannerSettings}>
           {banners.map((img, index) => (
@@ -75,21 +53,26 @@ const SeminarSec = () => {
         </Slider>
       </div>
 
-      {/* Scrollable Venue Cards */}
+      {/* Event cards */}
       <h2 className="venue-title">Seminar Venues</h2>
       <div className="venue-scroll">
-        {venues.map((venue, index) => (
+        {events.map((event, index) => (
           <div key={index} className="venue-card">
-            <img src={venue.image} alt={venue.name} />
-            <h3>{venue.name}</h3>
-            <p>⭐ {venue.rating} ({venue.reviews}) - {venue.location}</p>
-            <button className="checkin-btn">CHECK IN</button>
+            <img
+              src={`http://localhost:5000${event.image_url}`}
+              alt={event.name}
+              className="venue-img"
+              onError={(e) => (e.target.style.display = "none")}
+            />
+            <h3>{event.name}</h3>
+            <p>{event.description}</p>
+            <p>📍 {event.location} | ₹{event.price}</p>
+            <button className="checkin-btn" onClick={handleCheckIn}>
+              CHECK IN
+            </button>
           </div>
         ))}
       </div>
-     
-   
-      
     </div>
   );
 };

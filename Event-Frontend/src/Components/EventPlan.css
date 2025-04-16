@@ -1,0 +1,52 @@
+.event-plan-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 40px;
+    color: #ff6565;
+    margin-bottom: 20px;
+  }
+  
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .event-card {
+    width: 400px; /* Increased width */
+    height: 150px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-card:hover {
+    transform: scale(1.1);
+    border-color: #ff6565;
+  }
+  
+  .event-icon {
+    font-size: 50px; /* Increased icon size */
+    margin-bottom: 15px;
+  }
+  
+  .event-card p {
+    font-size: 18px; /* Increased text size */
+    font-weight: bold;
+  }
+  

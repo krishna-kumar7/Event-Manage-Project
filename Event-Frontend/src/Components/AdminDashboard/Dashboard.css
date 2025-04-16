@@ -1,0 +1,113 @@
+/* General layout */
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.fixed-sidebar {
+  position: fixed;
+  top: 70px; /* height of your header if fixed */
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 70px);
+  background-color: #232f3e;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f9fafc;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+/* Navigation */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  color: #ddd;
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-menu button:hover {
+  background-color: #3a4b61;
+  color: #fff;
+}
+
+/* Main content area */
+.dashboard-content {
+  margin-left: 240px; /* same as sidebar + padding */
+  padding: 30px;
+  flex: 1;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Summary cards */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  padding: 20px;
+  background-color: #fff;
+  border-left: 6px solid #007bff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Specific card colors */
+.card-events {
+  border-left-color: #28a745;
+}
+.card-users {
+  border-left-color: #17a2b8;
+}
+.card-revenue {
+  border-left-color: #ffc107;
+}

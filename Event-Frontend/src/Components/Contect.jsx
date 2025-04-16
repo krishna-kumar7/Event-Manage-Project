@@ -1,53 +1,71 @@
-import React, { useState } from "react";
-import "./Contect.css";
+import React, { useState } from 'react';
+import './Contect.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
+    // Here you would typically send the form data to a server
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message!');
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
     <div className="contact-container">
-      <h2 className="contact-title">Contact Us</h2>
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          placeholder="Name" 
-          value={formData.name} 
-          onChange={handleChange} 
-        />
+      <h1>Contact Us</h1>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name"
+          />
+        </div>
         
-        <label htmlFor="email">E-mail*</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="E-mail" 
-          value={formData.email} 
-          onChange={handleChange} 
-          required 
-        />
+        <div className="form-group">
+          <label htmlFor="email">E-mail*</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email*"
+            required
+          />
+        </div>
         
-        <label htmlFor="message">Your Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          placeholder="Your Message" 
-          value={formData.message} 
-          onChange={handleChange} 
-        ></textarea>
+        <div className="form-group">
+          <label htmlFor="message">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            rows="5"
+          />
+        </div>
         
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-btn">Submit</button>
       </form>
     </div>
   );

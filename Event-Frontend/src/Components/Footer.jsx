@@ -3,6 +3,13 @@ import "./Footer.css";
 import { FaInstagram, FaFacebookF, FaTwitter, FaPinterest } from "react-icons/fa";
 
 const Footer = () => {
+  const userRole = localStorage.getItem("userRole");
+  const isAdmin = userRole === "admin";
+
+  if (isAdmin) {
+    return null; // Hide footer for admin users
+  }
+
   return (
     <footer className="footer">
       <div className="footer-section">
