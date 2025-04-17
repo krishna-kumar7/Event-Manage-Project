@@ -64,7 +64,9 @@ npm start
 
 🙌 Contributors
 
-    Krishna – Full-stack Developer
+    Krishna Kumar Mahto
+    Ashutosh Kumar
+    Pappu Kumar
 
 📃 License
 
